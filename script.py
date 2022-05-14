@@ -17,7 +17,7 @@ import subprocess
 
 
 config = configparser.RawConfigParser()
-config.read('config.ini')
+config.read('../test-project/config.ini')
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 
