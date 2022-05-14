@@ -1,9 +1,44 @@
-## importing socket module
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Initialization
+
+# In[1]:
+
+
+import configparser
 import socket
-## getting the hostname by socket.gethostname() method
+import subprocess
+
+
+# # Define and Fetch Variables.
+
+# In[2]:
+
+
+config = configparser.RawConfigParser()
+config.read('config.ini')
 hostname = socket.gethostname()
-## getting the IP address using socket.gethostbyname() method
 ip_address = socket.gethostbyname(hostname)
-## printing the hostname and ip_address
-print(f"Hostname: {hostname}")
-print(f"IP Address: {ip_address}")
+
+
+# # Prepare
+
+# In[3]:
+
+
+value = 'DEFAULT'
+DCTYPE = config.get(hostname, 'DCTYPE', raw=False)
+REGION = config.get(hostname, 'REGION', raw=False)
+print(DCTYPE)  # -> "Python is fun!"
+
+print('The Script will run from Host:[',hostname,'][',ip_address,'], Deployment Type[',DCTYPE,']', ' in the region:[',REGION,']')
+
+subprocess.call(["./shell.sh"])
+
+
+# In[ ]:
+
+
+
+
