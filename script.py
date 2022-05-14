@@ -17,7 +17,7 @@ import subprocess
 
 
 config = configparser.RawConfigParser()
-config.read('../test-project/config.ini')
+config.read('config.ini')
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 
@@ -34,9 +34,9 @@ print(DCTYPE)  # -> "Python is fun!"
 
 print('The Script will run from Host:[',hostname,'][',ip_address,'], Deployment Type[',DCTYPE,']', ' in the region:[',REGION,']')
 
-subprocess.call(["../test-project/shell.sh"])
+subprocess.call([".shell.sh"])
 
-command = '../test-project/shell.sh'
+command = './shell.sh'
 exitvalue = subprocess.call([command])
 print(exitvalue)
 
