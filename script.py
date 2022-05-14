@@ -34,7 +34,7 @@ print(DCTYPE)  # -> "Python is fun!"
 
 print('The Script will run from Host:[',hostname,'][',ip_address,'], Deployment Type[',DCTYPE,']', ' in the region:[',REGION,']')
 
-subprocess.call([".shell.sh"])
+subprocess.call(["./shell.sh"])
 
 command = './shell.sh'
 exitvalue = subprocess.call([command])
